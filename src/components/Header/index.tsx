@@ -1,10 +1,26 @@
-import { HeaderContainer, Title } from "./styles";
+import {
+  HeaderContainer,
+  Title,
+  Text,
+  TextContainer,
+  TitleContainer,
+  Line,
+  SecondaryContainer,
+} from "./styles";
 
 const Header = () => {
   return (
-    <HeaderContainer>
-      <Title>Telzir telecom</Title>
-    </HeaderContainer>
+    <SecondaryContainer>
+      <HeaderContainer>
+        <TitleContainer>
+          <Title>Telzir telecom</Title>
+        </TitleContainer>
+        <TextContainer>
+          <Text>Our products</Text>
+          <Line />
+        </TextContainer>
+      </HeaderContainer>
+    </SecondaryContainer>
   );
 };
 

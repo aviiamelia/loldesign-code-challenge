@@ -1,12 +1,17 @@
 import Header from "./components/Header";
 import GlobalStyle from "./styles/global";
+import Container from "./components/Container";
+import Products from "./components/Products";
+import Simulating from "./components/Simulating";
 
 function App() {
   return (
-    <div>
+    <Container>
       <GlobalStyle />
       <Header />
-    </div>
+      <Products />
+      <Simulating />
+    </Container>
   );
 }
 
