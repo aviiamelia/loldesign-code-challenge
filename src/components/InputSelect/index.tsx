@@ -1,11 +1,6 @@
 import { Select } from "./styles";
 import React, { Dispatch, SetStateAction } from "react";
 
-interface Iregions {
-  origin?: number;
-  destiny?: number;
-  priceByMin: number;
-}
 interface Inputprosp {
   regions: number[];
   ORIGIN: boolean;
