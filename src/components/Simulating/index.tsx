@@ -22,13 +22,20 @@ const ProductsList = [
 ];
 const regions = [
   { origin: 11, destiny: 16, priceByMin: 1.9 },
-  { origin: 16, destiny: 11, priceByMin: 2.9 },
   { origin: 11, destiny: 17, priceByMin: 1.7 },
-  { origin: 17, destiny: 11, priceByMin: 2.7 },
   { origin: 11, destiny: 18, priceByMin: 0.9 },
+  { origin: 16, destiny: 11, priceByMin: 2.9 },
+  { origin: 16, destiny: 17, priceByMin: 2.9 },
+  { origin: 16, destiny: 18, priceByMin: 2.9 },
+  { origin: 17, destiny: 11, priceByMin: 2.7 },
+  { origin: 17, destiny: 16, priceByMin: 2.7 },
+  { origin: 17, destiny: 18, priceByMin: 2.7 },
   { origin: 18, destiny: 11, priceByMin: 1.9 },
+  { origin: 18, destiny: 16, priceByMin: 1.9 },
+  { origin: 18, destiny: 17, priceByMin: 1.9 },
 ];
-
+const uniqueRegions = [...new Set(regions.map((item) => item.origin))];
+const uniqueDestiny = [...new Set(regions.map((item) => item.destiny))];
 const Simulating = () => {
   const [total, setTotal] = useState<number>();
   const [message, setMessage] = useState<string>("");
@@ -51,7 +58,7 @@ const Simulating = () => {
       setTotalDiscount(0);
     } else {
       let timeDif = parseInt(minutes) - plan;
-      console.log(timeDif);
+
       if (regionCase) {
         let a = timeDif * regionCase.priceByMin;
         let percent = (a * 10) / 100;
@@ -84,9 +91,9 @@ const Simulating = () => {
       </ButtonContainer>
       <ContainerSelect>
         <Label>Origin - (DDD)</Label>
-        <InputSelection setState={setOrigindd} ORIGIN={true} regions={regions} />
+        <InputSelection setState={setOrigindd} ORIGIN={true} regions={uniqueRegions} />
         <Label>Destiny - (DDD)</Label>
-        <InputSelection setState={setDestinydd} ORIGIN={false} regions={regions} />
+        <InputSelection setState={setDestinydd} ORIGIN={false} regions={uniqueDestiny} />
         <Label>Minutes spended</Label>
         <Input value={minutes} setMinutes={setMinutes} />
       </ContainerSelect>
@@ -97,7 +104,7 @@ const Simulating = () => {
         Calculate
       </Button>
       <TotalContainer>
-        <Title>total with talk more plan: {totalDiscount && totalDiscount?.toFixed(2)} </Title>
+        <Title>total with talk more plan: {totalDiscount && totalDiscount?.toFixed(2)}</Title>
         <Title>total without talk more: {total && total?.toFixed(2)}</Title>
       </TotalContainer>
     </Container>
