@@ -33,7 +33,7 @@ This will open the project in the 'localhost:3000'
 
 # How to run the tests
 
--I used an E2E lib to make the tests, its the cypress lib which test the flow of the application automaticly:
+-I used an E2E lib to make the tests, its the cypress lib which test the flow of the application automatically:
 yarn test or npm test
 -Now for the E2E tests, you will notice a folder called cypress in the root of the project, the tests are there, the path to the test is cypress/integration/products.spec.js
--Now how to run the tests the E2E tests, you will need to be running the aplication with 'yarn start', with that in mind you will use the command 'yarn run cypress open', this will open a screen which you will see the 'integration' folder with all the tests, after that you will just need to click on the file products.spec.js, and the cypress will run the automated tests
+-Now how to run the tests the E2E tests, you will need to be running the aplication with 'yarn start', with that in mind you will use the command **yarn run cypress open**, this will open a console where you will see a folder called **INTEGRATION TESTS** it's a folder with all the tests that are native of the lib, in this folder you will see a file called talkmore.spec.js, which is the test that a coded for this application, you will just need to click on it and the tests will start automatically in your browser
